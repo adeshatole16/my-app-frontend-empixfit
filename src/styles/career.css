@@ -680,7 +680,7 @@
 /* Mobile Small (320px to 479px) */
 @media (max-width: 479px) {
     .career-hero {
-        height: 35vh;
+        height: 35vh;   
         margin-top: 90px;
     }
     
