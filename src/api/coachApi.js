@@ -1,6 +1,6 @@
 import API_BASE_URL from "./apiConfig";
 
-const BASE_URL = `${API_BASE_URL}/attendance`;
+const BASE_URL = `${API_BASE_URL}`;
 
 export const submitCoachApplication = async (formData) => {
 
