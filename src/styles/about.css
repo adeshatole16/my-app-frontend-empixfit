@@ -1,0 +1,567 @@
+/* About Page Styles */
+.about-page {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    min-height: 100vh;
+    padding-top: 100px;
+}
+
+.about-section {
+    padding: 100px 0;
+}
+
+.grid-2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+}
+
+.about-content h2 {
+    font-size: 3rem;
+    margin-bottom: 25px;
+    color: var(--accent-color);
+    font-weight: 800;
+}
+
+.about-content p {
+    font-size: 1.15rem;
+    opacity: 0.8;
+    line-height: 1.8;
+}
+
+.about-image {
+    position: relative;
+    border-radius: 30px;
+    overflow: hidden;
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5);
+    transition: var(--transition-smooth);
+}
+
+.about-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: var(--transition-smooth);
+}
+
+.about-image:hover img {
+    transform: scale(1.05);
+}
+
+/* Features Styling */
+.features-list {
+    margin-top: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.feature-item {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+}
+
+.feature-icon {
+    font-size: 2rem;
+    background: rgba(255, 87, 34, 0.1);
+    padding: 15px;
+    border-radius: 15px;
+    color: var(--accent-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 60px;
+    height: 60px;
+}
+
+.feature-text h3 {
+    font-size: 1.4rem;
+    margin-bottom: 8px;
+    color: white;
+}
+
+.feature-text p {
+    font-size: 1rem;
+    opacity: 0.7;
+}
+
+/* Vision Section Styling */
+.vision-section {
+    text-align: center;
+    padding: 120px 0;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.vision-section h2 {
+    font-size: 3.5rem;
+    margin-bottom: 30px;
+    font-weight: 900;
+}
+
+.vision-statement {
+    font-size: 1.5rem;
+    font-style: italic;
+    opacity: 0.9;
+    margin-bottom: 60px;
+    line-height: 1.6;
+}
+
+.vision-image {
+    width: 100%;
+    border-radius: 40px;
+    overflow: hidden;
+    box-shadow: 0 40px 80px rgba(0, 0, 0, 0.6);
+    position: relative;
+    animation: float 6s ease-in-out infinite;
+}
+
+.vision-image img {
+    width: 100%;
+    display: block;
+}
+
+/* Comprehensive Responsive Design for About Page */
+
+/* Large Desktop (1200px and above) */
+@media (min-width: 1200px) {
+    .about-content h2 {
+        font-size: 3.5rem;
+    }
+    
+    .grid-2 {
+        gap: 100px;
+    }
+    
+    .about-image {
+        height: 400px;
+    }
+    
+    .features-list {
+        gap: 40px;
+    }
+    
+    .feature-icon {
+        font-size: 2.5rem;
+        width: 70px;
+        height: 70px;
+    }
+    
+    .vision-section {
+        padding: 140px 0;
+    }
+    
+    .vision-section h2 {
+        font-size: 4rem;
+    }
+    
+    .vision-image {
+        border-radius: 50px;
+    }
+}
+
+/* Desktop (992px to 1199px) */
+@media (max-width: 1199px) {
+    .about-page {
+        padding-top: 90px;
+    }
+    
+    .about-section {
+        padding: 80px 0;
+    }
+    
+    .about-content h2 {
+        font-size: 3rem;
+    }
+    
+    .about-content p {
+        font-size: 1.1rem;
+    }
+    
+    .grid-2 {
+        gap: 80px;
+    }
+    
+    .about-image {
+        height: 350px;
+    }
+    
+    .features-list {
+        gap: 35px;
+    }
+    
+    .feature-item {
+        gap: 15px;
+    }
+    
+    .feature-icon {
+        font-size: 2.2rem;
+        width: 60px;
+        height: 60px;
+    }
+    
+    .feature-text h3 {
+        font-size: 1.3rem;
+    }
+    
+    .feature-text p {
+        font-size: 0.95rem;
+    }
+    
+    .vision-section {
+        padding: 120px 0;
+    }
+    
+    .vision-section h2 {
+        font-size: 3.5rem;
+    }
+    
+    .vision-statement {
+        font-size: 1.4rem;
+    }
+    
+    .vision-image {
+        border-radius: 40px;
+    }
+}
+
+/* Tablet Landscape (768px to 991px) */
+@media (max-width: 991px) {
+    .about-page {
+        padding-top: 80px;
+    }
+    
+    .about-section {
+        padding: 60px 0;
+    }
+    
+    .about-content h2 {
+        font-size: 2.8rem;
+    }
+    
+    .about-content p {
+        font-size: 1rem;
+    }
+    
+    .grid-2 {
+        grid-template-columns: 1fr;
+        gap: 60px;
+        text-align: center;
+    }
+    
+    .grid-reverse .about-image {
+        order: -1;
+    }
+    
+    .about-image {
+        height: 320px;
+    }
+    
+    .features-list {
+        gap: 30px;
+    }
+    
+    .feature-item {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 12px;
+    }
+    
+    .feature-icon {
+        font-size: 2rem;
+        width: 50px;
+        height: 50px;
+    }
+    
+    .feature-text h3 {
+        font-size: 1.2rem;
+    }
+    
+    .feature-text p {
+        font-size: 0.9rem;
+    }
+    
+    .vision-section {
+        padding: 100px 0;
+    }
+    
+    .vision-section h2 {
+        font-size: 3rem;
+    }
+    
+    .vision-statement {
+        font-size: 1.3rem;
+    }
+    
+    .vision-image {
+        border-radius: 30px;
+    }
+}
+
+/* Tablet Portrait (576px to 767px) */
+@media (max-width: 767px) {
+    .about-page {
+        padding-top: 70px;
+    }
+    
+    .about-section {
+        padding: 50px 0;
+    }
+    
+    .about-content h2 {
+        font-size: 2.5rem;
+    }
+    
+    .about-content p {
+        font-size: 0.95rem;
+    }
+    
+    .grid-2 {
+        gap: 50px;
+    }
+    
+    .about-image {
+        height: 280px;
+        border-radius: 20px;
+    }
+    
+    .features-list {
+        gap: 25px;
+    }
+    
+    .feature-item {
+        gap: 10px;
+    }
+    
+    .feature-icon {
+        font-size: 1.8rem;
+        width: 45px;
+        height: 45px;
+    }
+    
+    .feature-text h3 {
+        font-size: 1.1rem;
+    }
+    
+    .feature-text p {
+        font-size: 0.85rem;
+    }
+    
+    .vision-section {
+        padding: 80px 0;
+    }
+    
+    .vision-section h2 {
+        font-size: 2.8rem;
+    }
+    
+    .vision-statement {
+        font-size: 1.2rem;
+    }
+    
+    .vision-image {
+        border-radius: 25px;
+    }
+}
+
+/* Mobile Large (480px to 575px) */
+@media (max-width: 575px) {
+    .about-page {
+        padding-top: 60px;
+    }
+    
+    .about-section {
+        padding: 40px 0;
+    }
+    
+    .about-content h2 {
+        font-size: 2.2rem;
+    }
+    
+    .about-content p {
+        font-size: 0.9rem;
+    }
+    
+    .grid-2 {
+        gap: 40px;
+    }
+    
+    .about-image {
+        height: 250px;
+        border-radius: 15px;
+    }
+    
+    .features-list {
+        gap: 20px;
+    }
+    
+    .feature-item {
+        gap: 8px;
+    }
+    
+    .feature-icon {
+        font-size: 1.6rem;
+        width: 40px;
+        height: 40px;
+    }
+    
+    .feature-text h3 {
+        font-size: 1rem;
+    }
+    
+    .feature-text p {
+        font-size: 0.8rem;
+    }
+    
+    .vision-section {
+        padding: 60px 0;
+    }
+    
+    .vision-section h2 {
+        font-size: 2.5rem;
+    }
+    
+    .vision-statement {
+        font-size: 1.1rem;
+    }
+    
+    .vision-image {
+        border-radius: 20px;
+    }
+}
+
+/* Mobile Small (320px to 479px) */
+@media (max-width: 479px) {
+    .about-page {
+        padding-top: 50px;
+    }
+    
+    .about-section {
+        padding: 30px 0;
+    }
+    
+    .about-content h2 {
+        font-size: 2rem;
+    }
+    
+    .about-content p {
+        font-size: 0.85rem;
+    }
+    
+    .grid-2 {
+        gap: 30px;
+    }
+    
+    .about-image {
+        height: 220px;
+        border-radius: 12px;
+    }
+    
+    .features-list {
+        gap: 15px;
+    }
+    
+    .feature-item {
+        gap: 6px;
+    }
+    
+    .feature-icon {
+        font-size: 1.4rem;
+        width: 35px;
+        height: 35px;
+    }
+    
+    .feature-text h3 {
+        font-size: 0.9rem;
+    }
+    
+    .feature-text p {
+        font-size: 0.75rem;
+    }
+    
+    .vision-section {
+        padding: 40px 0;
+    }
+    
+    .vision-section h2 {
+        font-size: 2.2rem;
+    }
+    
+    .vision-statement {
+        font-size: 1rem;
+    }
+    
+    .vision-image {
+        border-radius: 15px;
+    }
+}
+
+/* Ultra Small Mobile (below 320px) */
+@media (max-width: 319px) {
+    .about-content h2 {
+        font-size: 1.8rem;
+    }
+    
+    .about-content p {
+        font-size: 0.8rem;
+    }
+    
+    .about-image {
+        height: 200px;
+    }
+    
+    .feature-icon {
+        font-size: 1.2rem;
+        width: 30px;
+        height: 30px;
+    }
+    
+    .feature-text h3 {
+        font-size: 0.8rem;
+    }
+    
+    .feature-text p {
+        font-size: 0.7rem;
+    }
+    
+    .vision-section h2 {
+        font-size: 2rem;
+    }
+    
+    .vision-statement {
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 968px) {
+    .grid-2 {
+        grid-template-columns: 1fr;
+        gap: 50px;
+        text-align: center;
+    }
+
+    .grid-reverse .about-image {
+        order: -1;
+    }
+
+    .about-content h2 {
+        font-size: 2.5rem;
+    }
+
+    .feature-item {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .vision-section h2 {
+        font-size: 2.8rem;
+    }
+
+    .vision-statement {
+        font-size: 1.2rem;
+    }
+}

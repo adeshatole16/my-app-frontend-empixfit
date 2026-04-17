@@ -1,0 +1,702 @@
+/* Contact Page Styles */
+.contact-page {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    min-height: 100vh;
+    padding-top: 80px;
+}
+
+/* Hero Section */
+.contact-hero {
+    height: 50vh;
+    position: relative;
+    background: url('https://images.unsplash.com/photo-1517649763962-0c623066013b?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.contact-hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+}
+
+.contact-hero-content {
+    position: relative;
+    z-index: 1;
+    max-width: 800px;
+    padding: 0 20px;
+}
+
+.contact-hero-content h1 {
+    font-size: 4rem;
+    font-weight: 900;
+    margin-bottom: 20px;
+}
+
+.contact-hero-content p {
+    font-size: 1.2rem;
+    opacity: 0.9;
+    line-height: 1.6;
+}
+
+/* Form and Info Section */
+.contact-container {
+    padding: 80px 0;
+}
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    gap: 60px;
+}
+
+.contact-form-card {
+    background-color: var(--card-bg);
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.form-group {
+    margin-bottom: 25px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 15px 20px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    color: white;
+    font-size: 1rem;
+    outline: none;
+    transition: var(--transition-smooth);
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    border-color: var(--accent-color);
+    background: rgba(255, 255, 255, 0.08);
+    box-shadow: 0 0 15px rgba(255, 87, 34, 0.2);
+}
+
+.submit-btn {
+    width: 100%;
+    padding: 18px;
+    background-color: var(--accent-color);
+    color: white;
+    font-weight: 700;
+    text-transform: uppercase;
+    border-radius: 12px;
+    letter-spacing: 1px;
+    transition: var(--transition-smooth);
+}
+
+.submit-btn:hover {
+    background-color: var(--accent-secondary);
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(255, 87, 34, 0.3);
+}
+
+/* Contact Info Side */
+.contact-info-side {
+    padding: 20px;
+}
+
+.contact-info-side h2 {
+    font-size: 2.2rem;
+    margin-bottom: 20px;
+}
+
+.info-text {
+    font-size: 1.1rem;
+    opacity: 0.8;
+    margin-bottom: 40px;
+    line-height: 1.7;
+}
+
+.info-list {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.info-item {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.info-icon {
+    width: 50px;
+    height: 50px;
+    background: rgba(255, 87, 34, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    color: var(--accent-color);
+    font-size: 1.5rem;
+}
+
+.info-details h4 {
+    margin-bottom: 5px;
+    color: rgba(255, 255, 255, 0.5);
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+}
+
+.info-details p {
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+/* Map Section */
+.map-section {
+    padding: 80px 0;
+    text-align: center;
+}
+
+.map-section h2 {
+    font-size: 3rem;
+    margin-bottom: 40px;
+}
+
+.map-wrapper {
+    width: 100%;
+    height: 450px;
+    border-radius: 30px;
+    overflow: hidden;
+    margin-bottom: 30px;
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4);
+}
+
+.map-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.7;
+}
+
+.map-tagline {
+    font-size: 1.2rem;
+    opacity: 0.7;
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+/* Comprehensive Responsive Design for Contact Page */
+
+/* Large Desktop (1200px and above) */
+@media (min-width: 1200px) {
+    .contact-hero-content h1 {
+        font-size: 4.5rem;
+    }
+    
+    .contact-grid {
+        grid-template-columns: 1.6fr 1fr;
+        gap: 80px;
+    }
+    
+    .contact-form-card {
+        padding: 50px;
+    }
+    
+    .map-wrapper {
+        height: 500px;
+    }
+}
+
+/* Desktop (992px to 1199px) */
+@media (max-width: 1199px) {
+    .contact-hero-content {
+        max-width: 700px;
+    }
+    
+    .contact-hero-content h1 {
+        font-size: 4rem;
+    }
+    
+    .contact-grid {
+        grid-template-columns: 1.5fr 1fr;
+        gap: 60px;
+    }
+    
+    .contact-form-card {
+        padding: 40px;
+    }
+    
+    .map-wrapper {
+        height: 450px;
+    }
+}
+
+/* Tablet Landscape (768px to 991px) */
+@media (max-width: 991px) {
+    .contact-hero {
+        height: 45vh;
+    }
+    
+    .contact-hero-content {
+        max-width: 600px;
+        padding: 0 15px;
+    }
+    
+    .contact-hero-content h1 {
+        font-size: 3.5rem;
+    }
+    
+    .contact-hero-content p {
+        font-size: 1.1rem;
+    }
+    
+    .contact-container {
+        padding: 60px 0;
+    }
+    
+    .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 50px;
+    }
+    
+    .contact-form-card {
+        padding: 35px;
+    }
+    
+    .form-group {
+        margin-bottom: 20px;
+    }
+    
+    .form-group label {
+        font-size: 0.9rem;
+    }
+    
+    .form-group input,
+    .form-group textarea {
+        padding: 12px 18px;
+        font-size: 0.95rem;
+    }
+    
+    .submit-btn {
+        padding: 15px;
+        font-size: 0.9rem;
+    }
+    
+    .contact-info-side {
+        padding: 15px;
+    }
+    
+    .contact-info-side h2 {
+        font-size: 2rem;
+    }
+    
+    .info-text {
+        font-size: 1rem;
+        margin-bottom: 30px;
+    }
+    
+    .info-list {
+        gap: 25px;
+    }
+    
+    .info-item {
+        gap: 15px;
+    }
+    
+    .info-icon {
+        width: 40px;
+        height: 40px;
+        font-size: 1.3rem;
+    }
+    
+    .info-details h4 {
+        font-size: 0.75rem;
+    }
+    
+    .info-details p {
+        font-size: 1rem;
+    }
+    
+    .map-section {
+        padding: 60px 0;
+    }
+    
+    .map-section h2 {
+        font-size: 2.8rem;
+    }
+    
+    .map-wrapper {
+        height: 400px;
+    }
+    
+    .map-tagline {
+        font-size: 1.1rem;
+    }
+}
+
+/* Tablet Portrait (576px to 767px) */
+@media (max-width: 767px) {
+    .contact-hero {
+        height: 40vh;
+    }
+    
+    .contact-hero-content {
+        max-width: 90%;
+        padding: 0 10px;
+    }
+    
+    .contact-hero-content h1 {
+        font-size: 3rem;
+        line-height: 1.1;
+    }
+    
+    .contact-hero-content p {
+        font-size: 1rem;
+    }
+    
+    .contact-container {
+        padding: 50px 0;
+    }
+    
+    .contact-grid {
+        gap: 40px;
+    }
+    
+    .contact-form-card {
+        padding: 30px;
+        border-radius: 15px;
+    }
+    
+    .form-group {
+        margin-bottom: 18px;
+    }
+    
+    .form-group label {
+        font-size: 0.85rem;
+    }
+    
+    .form-group input,
+    .form-group textarea {
+        padding: 10px 15px;
+        font-size: 0.9rem;
+    }
+    
+    .submit-btn {
+        padding: 12px;
+        font-size: 0.85rem;
+    }
+    
+    .contact-info-side {
+        padding: 10px;
+    }
+    
+    .contact-info-side h2 {
+        font-size: 1.8rem;
+    }
+    
+    .info-text {
+        font-size: 0.9rem;
+        margin-bottom: 25px;
+    }
+    
+    .info-list {
+        gap: 20px;
+    }
+    
+    .info-item {
+        gap: 12px;
+    }
+    
+    .info-icon {
+        width: 35px;
+        height: 35px;
+        font-size: 1.2rem;
+    }
+    
+    .info-details h4 {
+        font-size: 0.7rem;
+    }
+    
+    .info-details p {
+        font-size: 0.9rem;
+    }
+    
+    .map-section {
+        padding: 50px 0;
+    }
+    
+    .map-section h2 {
+        font-size: 2.5rem;
+    }
+    
+    .map-wrapper {
+        height: 350px;
+        border-radius: 20px;
+    }
+    
+    .map-tagline {
+        font-size: 1rem;
+    }
+}
+
+/* Mobile Large (480px to 575px) */
+@media (max-width: 575px) {
+    .contact-hero {
+        height: 35vh;
+    }
+    
+    .contact-hero-content {
+        max-width: 95%;
+        padding: 0 5px;
+    }
+    
+    .contact-hero-content h1 {
+        font-size: 2.6rem;
+        line-height: 1.1;
+    }
+    
+    .contact-hero-content p {
+        font-size: 0.95rem;
+    }
+    
+    .contact-container {
+        padding: 40px 0;
+    }
+    
+    .contact-grid {
+        gap: 30px;
+    }
+    
+    .contact-form-card {
+        padding: 25px;
+        border-radius: 12px;
+    }
+    
+    .form-group {
+        margin-bottom: 15px;
+    }
+    
+    .form-group label {
+        font-size: 0.8rem;
+    }
+    
+    .form-group input,
+    .form-group textarea {
+        padding: 8px 12px;
+        font-size: 0.85rem;
+    }
+    
+    .submit-btn {
+        padding: 10px;
+        font-size: 0.8rem;
+    }
+    
+    .contact-info-side {
+        padding: 5px;
+    }
+    
+    .contact-info-side h2 {
+        font-size: 1.6rem;
+    }
+    
+    .info-text {
+        font-size: 0.85rem;
+        margin-bottom: 20px;
+    }
+    
+    .info-list {
+        gap: 18px;
+    }
+    
+    .info-item {
+        gap: 10px;
+    }
+    
+    .info-icon {
+        width: 30px;
+        height: 30px;
+        font-size: 1rem;
+    }
+    
+    .info-details h4 {
+        font-size: 0.65rem;
+    }
+    
+    .info-details p {
+        font-size: 0.85rem;
+    }
+    
+    .map-section {
+        padding: 40px 0;
+    }
+    
+    .map-section h2 {
+        font-size: 2.2rem;
+    }
+    
+    .map-wrapper {
+        height: 300px;
+        border-radius: 15px;
+    }
+    
+    .map-tagline {
+        font-size: 0.9rem;
+    }
+}
+
+/* Mobile Small (320px to 479px) */
+@media (max-width: 479px) {
+    .contact-hero {
+        height: 30vh;
+    }
+    
+    .contact-hero-content {
+        max-width: 98%;
+        padding: 0 5px;
+    }
+    
+    .contact-hero-content h1 {
+        font-size: 2.2rem;
+        line-height: 1.1;
+    }
+    
+    .contact-hero-content p {
+        font-size: 0.9rem;
+    }
+    
+    .contact-container {
+        padding: 30px 0;
+    }
+    
+    .contact-grid {
+        gap: 25px;
+    }
+    
+    .contact-form-card {
+        padding: 20px;
+        border-radius: 10px;
+    }
+    
+    .form-group {
+        margin-bottom: 12px;
+    }
+    
+    .form-group label {
+        font-size: 0.75rem;
+    }
+    
+    .form-group input,
+    .form-group textarea {
+        padding: 6px 10px;
+        font-size: 0.8rem;
+    }
+    
+    .submit-btn {
+        padding: 8px;
+        font-size: 0.75rem;
+    }
+    
+    .contact-info-side {
+        padding: 0;
+    }
+    
+    .contact-info-side h2 {
+        font-size: 1.4rem;
+    }
+    
+    .info-text {
+        font-size: 0.8rem;
+        margin-bottom: 15px;
+    }
+    
+    .info-list {
+        gap: 15px;
+    }
+    
+    .info-item {
+        gap: 8px;
+    }
+    
+    .info-icon {
+        width: 25px;
+        height: 25px;
+        font-size: 0.9rem;
+    }
+    
+    .info-details h4 {
+        font-size: 0.6rem;
+    }
+    
+    .info-details p {
+        font-size: 0.8rem;
+    }
+    
+    .map-section {
+        padding: 30px 0;
+    }
+    
+    .map-section h2 {
+        font-size: 2rem;
+    }
+    
+    .map-wrapper {
+        height: 250px;
+        border-radius: 12px;
+    }
+    
+    .map-tagline {
+        font-size: 0.85rem;
+    }
+}
+
+/* Ultra Small Mobile (below 320px) */
+@media (max-width: 319px) {
+    .contact-hero-content h1 {
+        font-size: 2rem;
+    }
+    
+    .contact-form-card {
+        padding: 15px;
+    }
+    
+    .form-group input,
+    .form-group textarea {
+        padding: 5px 8px;
+        font-size: 0.75rem;
+    }
+    
+    .submit-btn {
+        font-size: 0.7rem;
+    }
+    
+    .contact-info-side h2 {
+        font-size: 1.2rem;
+    }
+    
+    .info-text {
+        font-size: 0.75rem;
+    }
+    
+    .map-wrapper {
+        height: 220px;
+    }
+}

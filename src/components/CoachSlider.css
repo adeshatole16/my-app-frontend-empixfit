@@ -1,0 +1,124 @@
+.coach-slider-section {
+    padding: 0px 0;
+    background-color: #0d0d0d;
+    overflow: hidden;
+}
+
+.coach-slider-container {
+    width: 100%;
+    position: relative;
+    padding: 40px 0;
+}
+
+.coach-slider-track {
+    display: flex;
+    width: calc(300px * 12 + 40px * 12);
+    /* Card width + gap * items */
+    gap: 40px;
+    animation: coachSlider 30s linear infinite;
+}
+
+.coach-slider-container:hover .coach-slider-track {
+    animation-play-state: paused;
+}
+
+.coach-slider-card {
+    width: 300px;
+    background: #151515;
+    border-radius: 25px;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    transition: var(--transition-smooth);
+    flex-shrink: 0;
+}
+
+.coach-slider-card:hover {
+    transform: translateY(-10px);
+    border-color: var(--accent-color);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+}
+
+.coach-card-image {
+    position: relative;
+    height: 350px;
+    overflow: hidden;
+}
+
+.coach-card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: var(--transition-smooth);
+}
+
+.coach-slider-card:hover .coach-card-image img {
+    transform: scale(1.1);
+}
+
+.coach-card-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px;
+    background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+    display: flex;
+    justify-content: flex-start;
+}
+
+.experience-badge {
+    background: var(--accent-color);
+    color: white;
+    padding: 6px 15px;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 700;
+}
+
+.coach-card-info {
+    padding: 25px;
+    text-align: center;
+}
+
+.coach-card-info h3 {
+    font-size: 1.4rem;
+    font-weight: 800;
+    margin-bottom: 8px;
+    color: white;
+}
+
+.coach-card-info p {
+    font-size: 1rem;
+    color: var(--accent-color);
+    font-weight: 600;
+}
+
+@keyframes coachSlider {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(calc(-300px * 6 - 40px * 6));
+    }
+}
+
+@media (max-width: 768px) {
+    .coach-slider-card {
+        width: 250px;
+    }
+
+    .coach-card-image {
+        height: 300px;
+    }
+
+    @keyframes coachSlider {
+        0% {
+            transform: translateX(0);
+        }
+
+        100% {
+            transform: translateX(calc(-250px * 6 - 40px * 6));
+        }
+    }
+}

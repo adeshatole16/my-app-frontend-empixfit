@@ -1,0 +1,540 @@
+.student-dashboard-page {
+    background-color: var(--bg-color);
+    padding-top: 100px;
+    /* Space for fixed navbar */
+}
+
+.student-dashboard-container {
+    width: 100%;
+    min-height: 100vh;
+    color: var(--text-color);
+    font-family: var(--font-main);
+}
+
+/* Main Content Area */
+.student-main-content {
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 60px 20px;
+}
+
+.student-dashboard-section {
+    margin-bottom: 80px;
+    opacity: 0;
+    transform: translateY(30px);
+    animation: studentFadeInUp 0.8s ease-out forwards;
+}
+
+.section-title {
+    font-size: 2rem;
+    font-weight: 800;
+    margin-bottom: 30px;
+    text-align: left;
+    color: var(--text-color);
+    letter-spacing: -0.5px;
+}
+
+@keyframes studentFadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Section 1: Welcome Header */
+.welcome-header {
+    text-align: left;
+    margin-bottom: 60px;
+    padding: 40px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.welcome-header h1 {
+    font-size: 3.5rem;
+    font-weight: 900;
+    margin-bottom: 15px;
+    background: linear-gradient(to right, #fff, var(--accent-color));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.welcome-header p {
+    font-size: 1.2rem;
+    color: rgba(255, 255, 255, 0.6);
+    max-width: 600px;
+}
+
+/* Section 2: Live Training Row */
+.training-status-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+}
+
+.live-training-card {
+    background: linear-gradient(135deg, #1a1a1a 0%, #222 100%);
+    padding: 40px;
+    border-radius: 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    transition: var(--transition-smooth);
+}
+
+.live-training-card:hover {
+    transform: scale(1.02);
+    border-color: var(--accent-color);
+}
+
+.join-live-btn {
+    padding: 22px 45px;
+    font-size: 1.3rem;
+    font-weight: 900;
+    background: var(--accent-color);
+    color: white;
+    border-radius: 50px;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    animation: studentPulseGlow 2s infinite;
+    cursor: pointer;
+    box-shadow: 0 10px 30px rgba(255, 87, 34, 0.4);
+    border: none;
+}
+
+@keyframes studentPulseGlow {
+    0% {
+        box-shadow: 0 0 0 0 rgba(255, 87, 34, 0.7);
+    }
+
+    70% {
+        box-shadow: 0 0 0 20px rgba(255, 87, 34, 0);
+    }
+
+    100% {
+        box-shadow: 0 0 0 0 rgba(255, 87, 34, 0);
+    }
+}
+
+.next-schedule-card {
+    background: var(--card-bg);
+    padding: 40px;
+    border-radius: 24px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.next-schedule-card::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 6px;
+    height: 100%;
+    background: var(--accent-color);
+}
+
+.schedule-title {
+    font-size: 1rem;
+    color: rgba(255, 255, 255, 0.6);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 15px;
+    font-weight: 700;
+}
+
+.schedule-time {
+    font-size: 2.5rem;
+    font-weight: 900;
+    color: #fff;
+}
+
+.schedule-highlight {
+    margin-top: 15px;
+    padding: 8px 15px;
+    background: rgba(255, 87, 34, 0.1);
+    border-radius: 8px;
+    color: var(--accent-color);
+    font-weight: 700;
+    display: inline-block;
+}
+
+/* Section 3: Attendance & Validity Row */
+.training-activity-row {
+    display: grid;
+    grid-template-columns: 1.4fr 1fr;
+    gap: 40px;
+}
+
+.attendance-card,
+.validity-card {
+    background: var(--card-bg);
+    padding: 40px;
+    border-radius: 28px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* Calendar Styling */
+.calendar-widget {
+    background: rgba(255, 255, 255, 0.02);
+    padding: 25px;
+    border-radius: 20px;
+}
+
+.calendar-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    font-weight: 700;
+    font-size: 1.2rem;
+}
+
+.calendar-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 12px;
+    text-align: center;
+}
+
+.calendar-day-header {
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.6);
+    font-weight: 700;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+}
+
+.calendar-day {
+    aspect-ratio: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    font-size: 1rem;
+    transition: var(--transition-smooth);
+    cursor: default;
+}
+
+.calendar-day.attended {
+    background: rgba(40, 167, 69, 0.15);
+    color: #4ade80;
+    border: 1px solid rgba(74, 222, 128, 0.3);
+    position: relative;
+    animation: studentPopIn 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+}
+
+@keyframes studentPopIn {
+    from {
+        transform: scale(0);
+    }
+
+    to {
+        transform: scale(1);
+    }
+}
+
+.legend {
+    margin-top: 30px;
+    display: flex;
+    gap: 25px;
+    font-size: 0.9rem;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.legend-dot-success {
+    width: 12px;
+    height: 12px;
+    background: #28a745;
+    border-radius: 50%;
+}
+
+/* Plan Validity Styling */
+.plan-info {
+    margin: 0;
+}
+
+.plan-name {
+    font-size: 1.8rem;
+    font-weight: 800;
+    color: var(--accent-color);
+    margin-bottom: 10px;
+}
+
+.plan-dates {
+    font-size: 1rem;
+    color: rgba(255, 255, 255, 0.6);
+    margin: 15px 0 35px;
+    line-height: 1.8;
+}
+
+.progress-container {
+    height: 16px;
+    background: #222;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 15px;
+}
+
+.progress-bar {
+    height: 100%;
+    background: linear-gradient(90deg, var(--accent-color), #ff9800);
+    border-radius: 10px;
+    transition: width 1s ease-in-out;
+}
+
+.expiry-msg {
+    color: #ff4444;
+    margin-top: 25px;
+    font-weight: 700;
+    padding: 15px;
+    background: rgba(255, 68, 68, 0.1);
+    border-radius: 12px;
+    text-align: center;
+}
+
+/* Section 4: Exercise Plan */
+.exercise-plan-container {
+    display: grid;
+    grid-template-columns: 0.7fr 1.3fr;
+    gap: 60px;
+    align-items: flex-start;
+}
+
+.exercise-description {
+    padding-right: 20px;
+}
+
+.exercise-description h2 {
+    font-size: 2.5rem;
+    margin-bottom: 25px;
+}
+
+.exercise-description p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.exercise-level-grid {
+    display: grid;
+    gap: 25px;
+}
+
+.exercise-card {
+    background: var(--card-bg);
+    padding: 35px;
+    border-radius: 24px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: var(--transition-smooth);
+}
+
+.exercise-card:hover {
+    transform: translateX(15px);
+    border-color: rgba(255, 255, 255, 0.15);
+}
+
+.exercise-card.active {
+    border-color: var(--accent-color);
+    box-shadow: 0 0 30px rgba(255, 87, 34, 0.5);
+    animation: studentBlinkBorder 2s infinite;
+}
+
+@keyframes studentBlinkBorder {
+    0% {
+        border-color: var(--accent-color);
+    }
+
+    50% {
+        border-color: transparent;
+    }
+
+    100% {
+        border-color: var(--accent-color);
+    }
+}
+
+.exercise-info h4 {
+    font-size: 1.5rem;
+    margin-bottom: 8px;
+    font-weight: 700;
+}
+
+.exercise-info p {
+    font-size: 1rem;
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.btn-start {
+    padding: 12px 35px;
+    background: transparent;
+    border: 2px solid var(--accent-color);
+    color: var(--accent-color);
+    border-radius: 50px;
+    font-weight: 800;
+    cursor: pointer;
+    transition: var(--transition-smooth);
+}
+
+.btn-start:hover {
+    background: var(--accent-color);
+    color: white;
+}
+
+/* Section 5: Diet Plan */
+.diet-plan-card {
+    background: var(--card-bg);
+    padding: 50px;
+    border-radius: 32px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.diet-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+    margin-top: 40px;
+}
+
+.diet-item {
+    padding: 40px;
+    background: rgba(255, 255, 255, 0.02);
+    border-radius: 28px;
+    text-align: center;
+    border: 1px solid rgba(255, 255, 255, 0.03);
+    transition: var(--transition-smooth);
+}
+
+.diet-item:hover {
+    transform: translateY(-10px);
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.diet-item i {
+    font-size: 3rem;
+    margin-bottom: 25px;
+    display: block;
+}
+
+.diet-title {
+    color: var(--accent-color);
+    font-weight: 800;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    letter-spacing: 2px;
+}
+
+.diet-item p {
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+/* Section 6: Video Grid */
+.videos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 40px;
+}
+
+.video-card {
+    background: var(--card-bg);
+    border-radius: 28px;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    transition: var(--transition-smooth);
+    cursor: pointer;
+}
+
+.video-card:hover {
+    transform: translateY(-15px);
+    border-color: var(--accent-color);
+}
+
+.video-thumb {
+    height: 220px;
+    background-color: #222;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.play-btn {
+    width: 70px;
+    height: 70px;
+    background: var(--accent-color);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 1.8rem;
+    opacity: 0.9;
+    transition: var(--transition-smooth);
+}
+
+.video-card:hover .play-btn {
+    transform: scale(1.2);
+}
+
+.video-info {
+    padding: 30px;
+}
+
+.video-info h4 {
+    font-size: 1.3rem;
+    font-weight: 700;
+}
+
+/* Responsive */
+@media (max-width: 1200px) {
+
+    .training-status-row,
+    .training-activity-row,
+    .exercise-plan-container {
+        grid-template-columns: 1fr;
+    }
+
+    .diet-grid {
+        gap: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .diet-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .welcome-header h1 {
+        font-size: 2.5rem;
+    }
+
+    .student-main-content {
+        padding: 40px 20px;
+    }
+
+    .schedule-time {
+        font-size: 1.8rem;
+    }
+}

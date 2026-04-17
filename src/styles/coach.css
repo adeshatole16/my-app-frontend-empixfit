@@ -1,0 +1,408 @@
+/* Coach Dashboard Full Width Styles */
+
+.full-width-layout {
+    background-color: var(--bg-color);
+    min-height: 100vh;
+    color: var(--text-color);
+}
+
+.dashboard-main-full {
+    padding-top: 100px;
+    /* Space for fixed navbar */
+    padding-bottom: 60px;
+}
+
+.container-full {
+    width: 92%;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.coach-dashboard-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    animation: fadeIn 0.8s ease-out;
+}
+
+/* Section 1: Welcome Header */
+.welcome-header-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px;
+    background: linear-gradient(90deg, rgba(255, 87, 34, 0.1) 0%, transparent 100%);
+    border-radius: 20px;
+    border-left: 5px solid var(--accent-color);
+}
+
+.welcome-left h1 {
+    font-size: 2.5rem;
+    font-weight: 800;
+    margin-bottom: 5px;
+}
+
+.welcome-left p {
+    opacity: 0.7;
+    font-size: 1.1rem;
+}
+
+.calendar-toggle-btn {
+    padding: 12px 25px;
+    background: var(--card-bg);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: white;
+    border-radius: 12px;
+    font-weight: 600;
+    transition: var(--transition-smooth);
+}
+
+.calendar-toggle-btn:hover {
+    border-color: var(--accent-color);
+    background: rgba(255, 87, 34, 0.05);
+}
+
+.calendar-dropdown-mock {
+    position: absolute;
+    right: 0;
+    top: 60px;
+    background: var(--card-bg);
+    padding: 20px;
+    border-radius: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    z-index: 10;
+    width: 250px;
+}
+
+.calendar-dropdown-mock input {
+    width: 100%;
+    padding: 10px;
+    background: #252525;
+    border: 1px solid #333;
+    color: white;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+.mock-info {
+    font-size: 0.8rem;
+    color: var(--accent-color);
+}
+
+/* Dashboard Grid */
+.dashboard-grid-main {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 30px;
+}
+
+/* Section 2: Coach Attendance Card */
+.coach-attendance-card {
+    background: var(--card-bg);
+    padding: 30px;
+    border-radius: 25px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    transition: var(--transition-smooth);
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.coach-attendance-card:hover {
+    transform: translateY(-5px);
+    border-color: rgba(255, 87, 34, 0.3);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
+}
+
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.current-date {
+    font-size: 0.9rem;
+    opacity: 0.6;
+}
+
+.attendance-status {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    background: rgba(255, 255, 255, 0.03);
+    padding: 20px;
+    border-radius: 15px;
+}
+
+.status-indicator {
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+}
+
+.status-indicator.present {
+    background: #4caf50;
+    box-shadow: 0 0 15px rgba(76, 175, 80, 0.5);
+}
+
+.status-indicator.absent {
+    background: #ff5252;
+}
+
+.mark-btn {
+    width: 100%;
+    padding: 15px;
+    background: var(--accent-color);
+    color: white;
+    font-weight: 700;
+    border-radius: 12px;
+    transition: var(--transition-smooth);
+}
+
+.mark-btn:hover:not(.disabled) {
+    background: var(--accent-secondary);
+    transform: scale(1.02);
+}
+
+.mark-btn.disabled {
+    background: rgba(255, 255, 255, 0.1);
+    cursor: default;
+    opacity: 0.5;
+}
+
+.mini-calendar-view p {
+    font-size: 0.9rem;
+    margin-bottom: 15px;
+    opacity: 0.7;
+}
+
+.calendar-dots {
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    gap: 8px;
+}
+
+.dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 2px;
+}
+
+.dot.green {
+    background: #4caf50;
+}
+
+.dot.gray {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+/* Section 3: Student Management Table */
+.student-management-section {
+    grid-column: span 1;
+    background: var(--card-bg);
+    padding: 30px;
+    border-radius: 25px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.student-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.student-table th {
+    text-align: left;
+    padding: 15px;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.05);
+    opacity: 0.6;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+}
+
+.student-table td {
+    padding: 20px 15px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.02);
+}
+
+.attendance-toggle {
+    display: flex;
+    gap: 5px;
+    background: #252525;
+    padding: 5px;
+    border-radius: 10px;
+    width: fit-content;
+}
+
+.attendance-toggle button {
+    padding: 8px 15px;
+    border-radius: 6px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    background: transparent;
+    color: rgba(255, 255, 255, 0.5);
+    transition: 0.2s;
+}
+
+.attendance-toggle button.active {
+    background: var(--accent-color);
+    color: white;
+}
+
+/* Section 4: Video Form */
+.upload-video-section {
+    background: var(--card-bg);
+    padding: 30px;
+    border-radius: 25px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.upload-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.form-group label {
+    font-size: 0.9rem;
+    font-weight: 600;
+    opacity: 0.8;
+}
+
+.form-group input,
+.form-group textarea {
+    padding: 12px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    color: white;
+    transition: 0.3s;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    border-color: var(--accent-color);
+    background: rgba(255, 87, 34, 0.02);
+}
+
+.upload-btn {
+    padding: 15px;
+    background: var(--accent-color);
+    color: white;
+    font-weight: 700;
+    border-radius: 12px;
+    margin-top: 10px;
+}
+
+/* Section 5: Video List */
+.uploaded-videos-section {
+    grid-column: span 1;
+}
+
+.video-grid-dashboard {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 25px;
+    margin-top: 20px;
+}
+
+.video-card-dash {
+    background: var(--card-bg);
+    border-radius: 20px;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    transition: var(--transition-smooth);
+}
+
+.video-card-dash:hover {
+    transform: translateY(-10px);
+    border-color: var(--accent-color);
+}
+
+.video-thumb {
+    position: relative;
+    height: 180px;
+}
+
+.video-thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.play-btn {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 50px;
+    height: 50px;
+    background: var(--accent-color);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 1.2rem;
+    opacity: 0;
+    transition: 0.3s;
+}
+
+.video-card-dash:hover .play-btn {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1.1);
+}
+
+.video-info-dash {
+    padding: 20px;
+}
+
+.video-info-dash h4 {
+    margin-bottom: 8px;
+    font-size: 1.1rem;
+}
+
+.video-info-dash p {
+    font-size: 0.85rem;
+    opacity: 0.6;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+/* Responsive */
+@media (max-width: 1200px) {
+    .dashboard-grid-main {
+        grid-template-columns: 1fr;
+    }
+
+    .student-management-section,
+    .uploaded-videos-section {
+        grid-column: span 1;
+    }
+}
+
+@media (max-width: 768px) {
+    .welcome-header-section {
+        flex-direction: column;
+        text-align: center;
+        gap: 20px;
+    }
+
+    .welcome-left h1 {
+        font-size: 1.8rem;
+    }
+
+    .video-grid-dashboard {
+        grid-template-columns: 1fr;
+    }
+}

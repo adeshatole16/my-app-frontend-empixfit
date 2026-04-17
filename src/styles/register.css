@@ -1,0 +1,158 @@
+.register-page {
+    background-color: var(--bg-color);
+    color: white;
+}
+
+.register-hero {
+    min-height: 100vh;
+    padding: 120px 0 80px;
+    background: linear-gradient(rgba(13, 13, 13, 0.8), rgba(13, 13, 13, 0.8)),
+        url('https://images.unsplash.com/photo-1541534741688-6078c6bfb5c5?auto=format&fit=crop&w=1600&q=80') center/cover;
+}
+
+.register-card-container {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 60px;
+    align-items: center;
+}
+
+.register-info h1 {
+    font-size: 4rem;
+    font-weight: 900;
+    margin-bottom: 20px;
+}
+
+.register-info p {
+    font-size: 1.2rem;
+    opacity: 0.8;
+    margin-bottom: 40px;
+}
+
+.register-benefits {
+    list-style: none;
+    display: grid;
+    gap: 15px;
+}
+
+.register-benefits li {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--accent-color);
+}
+
+.register-form-wrapper {
+    background: #1a1a1a;
+    padding: 50px;
+    border-radius: 30px;
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.register-form h2 {
+    font-size: 2rem;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.form-group label {
+    font-size: 0.9rem;
+    font-weight: 600;
+    opacity: 0.7;
+}
+
+.form-group input,
+.form-group select {
+    padding: 15px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    color: white;
+    outline: none;
+    transition: var(--transition-smooth);
+}
+
+.form-group input:focus,
+.form-group select:focus {
+    border-color: var(--accent-color);
+    background: rgba(255, 255, 255, 0.08);
+}
+
+.submit-registration-btn {
+    width: 100%;
+    padding: 20px;
+    background: var(--accent-color);
+    color: white;
+    font-weight: 800;
+    text-transform: uppercase;
+    border-radius: 15px;
+    margin-top: 30px;
+    letter-spacing: 1px;
+    transition: var(--transition-smooth);
+}
+
+.submit-registration-btn:hover:not(:disabled) {
+    background: var(--accent-secondary);
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(255, 87, 34, 0.3);
+}
+
+.success-view {
+    text-align: center;
+    padding: 40px 0;
+}
+
+.success-icon {
+    width: 80px;
+    height: 80px;
+    background: var(--accent-color);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 30px;
+    font-size: 3rem;
+    font-weight: 900;
+}
+
+.success-view h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.back-btn {
+    padding: 15px 40px;
+    background: transparent;
+    border: 2px solid var(--accent-color);
+    color: white;
+    border-radius: 30px;
+    font-weight: 700;
+    margin-top: 30px;
+}
+
+@media (max-width: 968px) {
+    .register-card-container {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .register-info h1 {
+        font-size: 3rem;
+    }
+
+    .form-grid {
+        grid-template-columns: 1fr;
+    }
+}
