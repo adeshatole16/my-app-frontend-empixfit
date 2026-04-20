@@ -26,7 +26,7 @@ const HeroSection = () => {
                 </div>
                 <div className="hero-image">
                     {/* Using a high-quality sports placeholder image */}
-                    <img src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Athlete training" />
+                    <img src="/home_page image.jpg" alt="Athlete training" />
                 </div>
             </div>
         </section>

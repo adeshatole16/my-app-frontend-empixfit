@@ -15,12 +15,12 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    column-gap: 19px;
 }
 
 html {
     scroll-behavior: smooth;
     scroll-padding-top: 80px;
+    overflow-x: hidden;
 }
 
 body {
@@ -48,6 +48,13 @@ button {
 }
 
 /* Reusable Components */
+/* Homepage wrapper - prevent horizontal overflow on mobile */
+.home-page {
+    overflow-x: hidden;
+    width: 100%;
+    max-width: 100vw;
+}
+
 .container {
     width: 92%;
     max-width: 1600px;
@@ -190,7 +197,7 @@ button {
 
 .nav-container {
     display: flex;
-    /* justify-content: space-between; */
+    justify-content: space-between;
     align-items: center;
     max-width: 100%;
     padding: 0 60px;
@@ -212,6 +219,7 @@ button {
 .logo {
     display: flex;
     align-items: center;
+    text-decoration: none;
 }
 
 .nav-logo {
@@ -316,6 +324,14 @@ button {
     font-size: 1.2rem;
     font-weight: 600;
     transition: var(--transition-smooth);
+}
+
+/* Global navbar link reset — no underlines */
+.navbar a,
+.navbar a:visited,
+.navbar a:hover,
+.navbar a:active {
+    text-decoration: none;
 }
 
 .mobile-nav-links li a:hover {
@@ -436,6 +452,7 @@ button {
     text-transform: uppercase;
     letter-spacing: 1px;
     color: rgba(255, 255, 255, 0.8);
+    text-decoration: none;
     transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
     position: relative;
     z-index: 1;
@@ -918,6 +935,7 @@ button {
     max-width: 1000px;
     margin: 0 auto;
     position: relative;
+    overflow: hidden;
 }
 
 .features-grid::before {
@@ -1165,6 +1183,7 @@ button {
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 40px;
     position: relative;
+    overflow: hidden;
 }
 
 .coaches-grid::before {
@@ -1412,9 +1431,10 @@ button {
 
 .grounds-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 40px;
     position: relative;
+    overflow: hidden;
 }
 
 .grounds-grid::before {
@@ -2485,10 +2505,51 @@ button {
     }
 }
 
-/* Mobile Navigation Responsive */
+/* Mobile Navigation Responsive — Stable Navbar */
 @media (max-width: 991px) {
+    /* ─── Fixed navbar: no resize on scroll ─── */
+    .navbar {
+        padding: 8px 0 !important;
+        transition: background 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+        /* Only animate background/border — NOT padding or height */
+    }
+
+    .navbar-scrolled {
+        padding: 8px 0 !important;
+        /* Override the desktop scroll padding so navbar stays same height */
+    }
+
+    /* ─── Container: proper spacing between logo & hamburger ─── */
+    .nav-container {
+        justify-content: space-between;
+        padding: 0 16px;
+    }
+
+    /* ─── Logo: fixed size, no animation ─── */
+    .nav-logo {
+        height: 45px;
+        transition: none;
+        filter: none;
+    }
+
+    .navbar-scrolled .nav-logo {
+        height: 45px;
+        filter: none;
+        /* Keep same size as un-scrolled — no shrink */
+    }
+
+    .nav-logo::after {
+        display: none;
+        /* Remove hover glow pseudo-element on mobile */
+    }
+
+    /* ─── Hamburger: push to right, proper tap target ─── */
     .mobile-menu-btn {
         display: flex;
+        margin-left: auto;
+        padding: 8px;
+        width: 36px;
+        height: 30px;
     }
     
     .mobile-nav {
@@ -2500,6 +2561,11 @@ button {
     }
     
     .nav-actions {
+        display: none;
+    }
+
+    /* ─── Remove decorative line from nav-container on mobile ─── */
+    .nav-container::before {
         display: none;
     }
 }

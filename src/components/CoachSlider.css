@@ -8,6 +8,7 @@
     width: 100%;
     position: relative;
     padding: 40px 0;
+    overflow: hidden;
 }
 
 .coach-slider-track {
