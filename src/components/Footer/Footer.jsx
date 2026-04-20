@@ -11,7 +11,7 @@ const Footer = () => {
 
           <div className="footer-about">
             <div className="footer-logo">
-              SPORTS<span>ADIP</span>
+              EMPIXFIT
             </div>
 
             <p>

@@ -41,108 +41,108 @@ const Register = () => {
         setFormData(prev => ({ ...prev, profilePhoto: e.target.files[0] }));
     };
 
-   const handleSubmit = async (e) => {
-    e.preventDefault();
-    setIsSubmitting(true);
-    setStatus({ type: '', message: '' });
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        setIsSubmitting(true);
+        setStatus({ type: '', message: '' });
 
-    try {
+        try {
 
-        // STEP 1 → Create Razorpay Order
-        const order = await createOrder(300);
+            // STEP 1 → Create Razorpay Order
+            const order = await createOrder(300);
 
-        // const options = {
-        //     key: "rzp_test_Xc78CPXfBWKHWph6uKAxQTr5",
-        //     amount: order.amount,
-        //     currency: "INR",
-        //     order_id: order.orderId,
+            // const options = {
+            //     key: "rzp_test_Xc78CPXfBWKHWph6uKAxQTr5",
+            //     amount: order.amount,
+            //     currency: "INR",
+            //     order_id: order.orderId,
 
-        //     name: "Sports Training Platform",
-        //     description: "Training Plan Payment",
+            //     name: "Sports Training Platform",
+            //     description: "Training Plan Payment",
 
-        //     prefill: {
-        //         name: formData.fullName,
-        //         email: formData.email,
-        //         contact: formData.phone
-        //     },
+            //     prefill: {
+            //         name: formData.fullName,
+            //         email: formData.email,
+            //         contact: formData.phone
+            //     },
 
-        //     handler: async function (response) {
+            //     handler: async function (response) {
 
-        //         await completeRegistration({
-        //             ...formData,
-        //             paymentId: response.razorpay_payment_id,
-        //             orderId: response.razorpay_order_id,
-        //             signature: response.razorpay_signature
-        //         });
+            //         await completeRegistration({
+            //             ...formData,
+            //             paymentId: response.razorpay_payment_id,
+            //             orderId: response.razorpay_order_id,
+            //             signature: response.razorpay_signature
+            //         });
 
-        //         setStatus({
-        //             type: "success",
-        //             message: "Payment successful and registration completed!"
-        //         });
-        //     },
+            //         setStatus({
+            //             type: "success",
+            //             message: "Payment successful and registration completed!"
+            //         });
+            //     },
 
-        //     theme: {
-        //         color: "#0f172a"
-        //     }
-        // };
+            //     theme: {
+            //         color: "#0f172a"
+            //     }
+            // };
 
 
-        const options = {
-    key: "rzp_test_Xc78CPXfBWKHWph6uKAxQTr5", // full Razorpay test key
-    amount: order.amount,
-    currency: "INR",
-    order_id: order.orderId,
+            const options = {
+                key: "rzp_test_SQCE0tYhnHriPU", // full Razorpay test key
+                amount: order.amount,
+                currency: "INR",
+                order_id: order.orderId,
 
-    name: "Sports Training Platform",
-    description: "Training Plan Payment",
+                name: "Sports Training Platform",
+                description: "Training Plan Payment",
 
-    prefill: {
-        name: formData.fullName,
-        email: formData.email,
-        contact: formData.phone
-    },
+                prefill: {
+                    name: formData.fullName,
+                    email: formData.email,
+                    contact: formData.phone
+                },
 
-    handler: async function (response) {
+                handler: async function (response) {
 
-        await completeRegistration({
-            ...formData,
-            paymentId: response.razorpay_payment_id,
-            orderId: response.razorpay_order_id,
-            signature: response.razorpay_signature
-        });
+                    await completeRegistration({
+                        ...formData,
+                        paymentId: response.razorpay_payment_id,
+                        orderId: response.razorpay_order_id,
+                        signature: response.razorpay_signature
+                    });
 
-        setStatus({
-            type: "success",
-            message: "Payment successful and registration completed!"
-        });
+                    setStatus({
+                        type: "success",
+                        message: "Payment successful and registration completed!"
+                    });
 
-    },
+                },
 
-    modal: {
-        ondismiss: function () {
-            console.log("Payment popup closed");
+                modal: {
+                    ondismiss: function () {
+                        console.log("Payment popup closed");
+                    }
+                },
+
+                theme: {
+                    color: "#0f172a"
+                }
+            };
+
+            const razorpay = new window.Razorpay(options);
+            razorpay.open();
+
+        } catch (error) {
+            console.error(error);
+
+            setStatus({
+                type: 'error',
+                message: 'Payment failed. Please try again.'
+            });
+        } finally {
+            setIsSubmitting(false);
         }
-    },
-
-    theme: {
-        color: "#0f172a"
-    }
-};
-
-        const razorpay = new window.Razorpay(options);
-        razorpay.open();
-
-    } catch (error) {
-        console.error(error);
-
-        setStatus({
-            type: 'error',
-            message: 'Payment failed. Please try again.'
-        });
-    } finally {
-        setIsSubmitting(false);
-    }
-};  return (
+    }; return (
         <div className="register-page">
             <Navbar />
             <div className="register-hero">
